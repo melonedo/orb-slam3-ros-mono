@@ -121,8 +121,9 @@ target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
-${CMAKE_CURRENT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
-${CMAKE_CURRENT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
+orbslam3-DBoW2
+orbslam3-g2o
+slambench-libraries
 -lboost_serialization
 -lcrypto
 )
