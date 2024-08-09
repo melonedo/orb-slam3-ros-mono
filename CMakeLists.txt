@@ -116,6 +116,13 @@ include/MLPnPsolver.h
 include/TwoViewReconstruction.h
 src/TwoViewReconstruction.cc)
 
+add_custom_command(
+   OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/Vocabulary/ORBvoc.txt
+   COMMAND tar -xf ORBvoc.txt.tar.gz
+   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Vocabulary
+)
+add_custom_target(${PROJECT_NAME}-extract-vocabulary DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Vocabulary/ORBvoc.txt)
+add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}-extract-vocabulary)
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
